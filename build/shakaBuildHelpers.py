@@ -199,6 +199,7 @@ def npm_version(is_dirty=False):
   try:
     base = cygwin_safe_path(get_source_base())
     cmd_line = ['npm', '--prefix', base, 'ls', 'shaka-player']
+    print(cmd_line)
     text = execute_get_output(cmd_line).decode('utf8')
   except subprocess.CalledProcessError as e:
     text = e.output.decode('utf8')
